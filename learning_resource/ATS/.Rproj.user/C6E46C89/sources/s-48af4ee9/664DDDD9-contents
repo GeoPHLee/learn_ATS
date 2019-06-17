@@ -1,0 +1,48 @@
+library(tidyverse)
+
+get_TIS_upseq<- function(start_site,strand){
+  range=1000
+  if(strand=="+") {
+    seq_start=start_site-range
+  } else if(strand=="-") {
+    seq_start=start_site+range
+  } else {
+    return("none")
+  }
+  return(seq_start)
+}
+get_TIS_downseq <- function(start_site,strand){
+  range=1000
+  if(strand=="+") {
+    seq_stop=start_site+2+range
+  } else if(strand=="-") {
+    seq_stop=start_site-2-range
+  } else {
+    return("none")
+  }
+  return(seq_stop)
+}
+
+
+tisdb=read_csv("/data/reference/human/TIS/human_tisdb_data_1.0.csv")
+#separte 3 type
+uTis=tisdb[which(tisdb$`TIS type`=='uTIS'),]#6045
+aTis=tisdb[which(tisdb$`TIS type`=='aTIS'),]#3847
+dTis=tisdb[which(tisdb$`TIS type`=='dTIS'),]#2031
+#have a look on the data composition
+ggplot(data=tisdb,aes(x=`TIS type`))+stat_count(fill=c("#999999", "#E69F00", "#56B4E9"))
+#
+uTis_bed=bed_out_all2[which(bed_out_all2$`TIS type`=='uTIS'),]#6045
+aTis_bed=bed_out_all2[which(bed_out_all2$`TIS type`=='aTIS'),]#3847
+dTis_bed=bed_out_all2[which(bed_out_all2$`TIS type`=='dTIS'),]#2031
+write_tsv(uTis_bed[!duplicated(uTis_bed),],"utis_fasta")
+write_tsv(aTis_bed[!duplicated(aTis_bed),],"atis_fasta")
+write_tsv(dTis_bed[!duplicated(dTis_bed),],"dtis_fasta")
+
+
+uTis_bed=select(uTis,Chr,seq_start,seq_stop,`TIS type`,Strand)
+write_tsv(uTis_bed[!duplicated(uTis_bed),],"utis_fasta")
+aTis_bed=select(aTis,Chr,seq_start,seq_stop,`TIS type`,Strand)
+write_tsv(aTis_bed[!duplicated(aTis_bed),],"atis_fasta")
+dTis_bed=select(dTis,Chr,seq_start,seq_stop,`TIS type`,Strand)
+write_tsv(dTis_bed[!duplicated(dTis_bed),],"dtis_fasta")

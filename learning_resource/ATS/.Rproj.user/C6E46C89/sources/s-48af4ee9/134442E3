@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1560756898433.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "134442E3",
+    "lastKnownWriteTime" : 3759782688713831269,
+    "last_content_update" : 1560756898433,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "4378E91E",
+        "caption" : "tisdb",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=tisdb&cache_key=4378E91E",
+        "displayedObservations" : 11923,
+        "environment" : "",
+        "object" : "tisdb",
+        "preview" : 0,
+        "totalObservations" : 11923,
+        "variables" : 10
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}

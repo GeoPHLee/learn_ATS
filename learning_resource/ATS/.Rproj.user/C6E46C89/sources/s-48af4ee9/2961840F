@@ -1,0 +1,29 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1560758506914.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "2961840F",
+    "lastKnownWriteTime" : 3759782688713831269,
+    "last_content_update" : 1560758506914,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "cacheKey" : "C0E3D9BF",
+        "caption" : "aTis_bed_csv",
+        "contentUrl" : "grid_resource/gridviewer.html?env=&obj=aTis_bed_csv&cache_key=C0E3D9BF",
+        "displayedObservations" : "3847",
+        "environment" : "",
+        "object" : "aTis_bed_csv",
+        "preview" : "0",
+        "totalObservations" : "3847",
+        "variables" : "5"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_dataframe"
+}
